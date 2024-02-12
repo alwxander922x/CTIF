@@ -1,5 +1,5 @@
-/ssqatest*.json
+/ssqatest/ssqatest/archive/*.json
+/ssqatest/*/*/*.json
 /ssqatest*.css
 /ssqatest*.html
 /ssqatest*.xml
-
