@@ -1,6 +1,5 @@
 import pytest
 from ssqatest.src.pages.MyAccountSignedOut import MyAccountSignedOut
-import pdb
 
 
 @pytest.mark.usefixtures("init_driver")
@@ -14,7 +13,10 @@ class TestLoginNegative:
         my_account.input_login_username('saaadassd')
         my_account.input_login_password('safsjdnkmldfs')
         my_account.click_login_button()
-        pdb.set_trace()
+        expected_err = 'Error: The username saaadassd is not registered on this site. If you are unsure of your username, try your email address instead.'
+        my_account.wait_until_error_is_displayed(expected_err)
+
+
 
 # test_login_none_existing_user_ccde(self):
 #         my_account_ccde = MyAccountSignedOut(self.driver)

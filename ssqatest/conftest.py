@@ -19,9 +19,10 @@ def init_driver(request):
 
     if browser in 'chrome':
         driver = webdriver.Chrome()
+        driver.maximize_window()
     elif browser in 'firefox':
         driver = webdriver.Firefox()
 
     request.cls.driver = driver
     yield
-    driver.quit()
+    # driver.quit()
