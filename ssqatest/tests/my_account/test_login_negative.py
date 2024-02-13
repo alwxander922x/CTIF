@@ -7,7 +7,11 @@ from ssqatest.src.pages.MyAccountSignedOut import MyAccountSignedOut
 
 class TestLoginNegative:
     @pytest.mark.tcid12
+    @pytest.mark.smoke
     def test_login_none_existing_user(self):
+        print("*****")
+        print("Test login not existing")
+        print("*****")
         my_account = MyAccountSignedOut(self.driver)
         my_account.go_to_my_account()
         my_account.input_login_username('saaadassd')
